@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btngrabar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DA000000"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="10dp"
+        android:text="Grabadora de Voz"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
+        app:srcCompat="@drawable/radio" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btngrabaraudio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#D32F2F"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:icon="@drawable/baseline_keyboard_voice_24"
+            app:iconGravity="textStart" />
+
+        <Button
+            android:id="@+id/btndetener"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#D32F2F"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:icon="@drawable/baseline_mic_off_24"
+            app:iconGravity="textStart" />
+
+        <Button
+            android:id="@+id/btnver"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:backgroundTint="#D32F2F"
+            app:icon="@drawable/baseline_play_arrow_24"
+            app:iconGravity="textStart" />
+
+        <Button
+            android:id="@+id/btnverdet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#D32F2F"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:icon="@drawable/baseline_stop_24"
+            app:iconGravity="textStart" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
