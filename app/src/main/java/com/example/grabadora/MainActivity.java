@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         fileName += "/audio.mp3";
 
         Button grabar = findViewById(R.id.btngrabaraudio);
+        Button detener = findViewById(R.id.btndetener);
+        Button reproducir = findViewById(R.id.btnver);
+        Button detenerRepro = findViewById(R.id.btnverdet);
+
         grabar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button reproducir = findViewById(R.id.btnver);
         reproducir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button detener = findViewById(R.id.btndetener);
         detener.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button detenerRepro = findViewById(R.id.btnverdet);
         detenerRepro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,12 +89,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         recorder.start();
+        Toast.makeText(this, "Grabación Iniciada", Toast.LENGTH_SHORT).show();
     }
 
     private void detenerGrabacion() {
         recorder.stop();
         recorder.release();
         recorder = null;
+        Toast.makeText(this, "Grabación Detenida", Toast.LENGTH_SHORT).show();
     }
 
     private void reproducir() {
@@ -101,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             player.setDataSource(fileName);
             player.prepare();
             player.start();
+            Toast.makeText(this, "Reproduciendo Audio", Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Log.e("AUDIO", "Error al reproducir audio.");
         }
@@ -109,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
     private void pararReproduccion() {
         player.release();
         player = null;
+        Toast.makeText(this, "Audio Detenido", Toast.LENGTH_SHORT).show();
     }
 
     @Override
